@@ -1,0 +1,44 @@
+version: '3.0'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: betgames-nginx
+    depends_on:
+      - php
+    networks:
+      - app-tier
+    ports:
+      - 8070:8080
+    volumes:
+      - ./infrastructure/docker/nginx:/etc/nginx/conf.d
+      - ./app:/app
+
+  php:
+    build: infrastructure/docker/php
+    container_name: betgames-php
+    depends_on:
+      - mysql
+    networks:
+      - app-tier
+    volumes:
+      - ./app:/app
+
+  mysql:
+    image: bitnami/mysql:8.0
+    container_name: betgames-mysql
+    networks:
+      - app-tier
+    ports:
+      - 3307:3306
+    volumes:
+      - .:/var/www/betgames
+    environment:
+      - MYSQL_DATABASE=betgames
+      - MYSQL_USER=betgames
+      - MYSQL_PASSWORD=betgames
+      - MYSQL_ROOT_PASSWORD=mysecretpw
+
+networks:
+  app-tier:
+    driver: bridge
