@@ -3,7 +3,7 @@
 namespace App\User\Infrastructure\Http\Controller;
 
 use App\User\Application\Command\Create\CreateUser;
-use App\User\Application\Command\Query\GetUser;
+use App\User\Application\Query\GetUser;
 use App\User\Domain\Request\CreateUserRequest;
 use App\User\Domain\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\User\Infrastructure\Doctrine;
+
+use App\Shared\Infrastructure\Doctrine\EntityRepositoryTrait;
 use App\User\Domain\User;
 use App\User\Domain\UserRepositoryInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
