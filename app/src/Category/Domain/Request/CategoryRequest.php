@@ -7,7 +7,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[UniqueEntity(fields: ['name'], entityClass: Category::class)]
-class CategoryRequest
+readonly class CategoryRequest
 {
     #[Assert\NotBlank]
     private string $name;

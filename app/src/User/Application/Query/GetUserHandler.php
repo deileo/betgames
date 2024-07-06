@@ -18,6 +18,6 @@ readonly class GetUserHandler
     {
         $email = $message->getEmail();
 
-        return $this->userRepository->getUserByEmail($email);
+        return $this->userRepository->getByEmail($email);
     }
 }

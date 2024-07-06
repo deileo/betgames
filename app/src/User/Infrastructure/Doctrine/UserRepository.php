@@ -17,7 +17,7 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
         parent::__construct($registry, User::class);
     }
 
-    public function getUserByEmail(string $email): ?User
+    public function getByEmail(string $email): ?User
     {
         $query = $this->createQueryBuilder('u')
             ->andWhere('u.email = :email')

@@ -23,9 +23,7 @@ class CategoryRepository extends ServiceEntityRepository implements CategoryRepo
      */
     public function getAll(): ArrayCollection
     {
-        $query = $this->getResult($this->createQueryBuilder('c'));
-
-        return new ArrayCollection($query);
+        return $this->getResult($this->createQueryBuilder('c'));
     }
 
     public function getByName(string $name): ?Category

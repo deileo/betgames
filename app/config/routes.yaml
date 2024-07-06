@@ -10,5 +10,11 @@ category:
         namespace: App\Category\Infrastructure\Http\Controller
     type: attribute
 
+task:
+    resource:
+        path: ../src/Task/
+        namespace: App\Task\Infrastructure\Http\Controller
+    type: attribute
+
 api_login:
     path: /api/login
