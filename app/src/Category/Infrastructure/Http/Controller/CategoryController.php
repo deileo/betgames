@@ -29,7 +29,7 @@ class CategoryController extends AbstractController
         $this->messageBus = $bus;
     }
 
-    #[Route(name: 'category_get_all', methods: 'GET', format: 'json')]
+    #[Route(name: 'category_get_all', methods: 'GET')]
     public function getAll(): JsonResponse
     {
         /** @var ArrayCollection<Category> $categories */

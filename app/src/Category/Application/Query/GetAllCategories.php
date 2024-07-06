@@ -2,7 +2,7 @@
 
 namespace App\Category\Application\Query;
 
-class GetAllCategories
+readonly class GetAllCategories
 {
 
 }
