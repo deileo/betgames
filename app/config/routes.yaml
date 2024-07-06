@@ -1,7 +1,13 @@
-controllers:
+user:
     resource:
         path: ../src/User/
         namespace: App\User\Infrastructure\Http\Controller
+    type: attribute
+
+category:
+    resource:
+        path: ../src/Category/
+        namespace: App\Category\Infrastructure\Http\Controller
     type: attribute
 
 api_login:

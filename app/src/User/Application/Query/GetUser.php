@@ -1,6 +1,6 @@
 <?php
 
-namespace App\User\Application\Command\Query;
+namespace App\User\Application\Query;
 
 readonly class GetUser
 {

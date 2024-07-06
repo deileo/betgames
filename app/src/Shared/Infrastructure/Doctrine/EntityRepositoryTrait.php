@@ -1,6 +1,6 @@
 <?php
 
-namespace App\User\Infrastructure\Doctrine;
+namespace App\Shared\Infrastructure\Doctrine;
 
 use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\QueryBuilder;
