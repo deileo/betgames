@@ -3,3 +3,6 @@ controllers:
         path: ../src/User/
         namespace: App\User\Infrastructure\Http\Controller
     type: attribute
+
+api_login:
+    path: /api/login

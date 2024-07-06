@@ -2,8 +2,11 @@
 
 namespace App\User\Domain\Request;
 
+use App\User\Domain\User;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
+#[UniqueEntity(fields: ['email'], entityClass: User::class)]
 class CreateUserRequest
 {
     #[Assert\NotBlank]
