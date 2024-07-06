@@ -2,6 +2,7 @@
 
 namespace App\User\Domain;
 
+use App\User\Domain\Response\UserResponse;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -97,5 +98,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getUserIdentifier(): string
     {
         return $this->getEmail();
+    }
+
+    public function toResponse(): UserResponse
+    {
+        return new UserResponse(
+            $this->getId(),
+            $this->getEmail(),
+            $this->getFullName()
+        );
     }
 }
