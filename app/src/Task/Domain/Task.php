@@ -14,6 +14,8 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 #[ORM\Entity]
 #[ORM\Table(name: 'tasks')]
+#[ORM\Index(name: 'task_priority_idx', columns: ['priority'])]
+#[ORM\Index(name: 'task_status_idx', columns: ['status'])]
 class Task
 {
     Use TimestampableEntity;
@@ -144,6 +146,8 @@ class Task
             $this->getStatus(),
             $this->getPriority(),
             $this->getUser()->getFullName(),
+            $this->getCreatedAt(),
+            $this->getUpdatedAt(),
             $this->getDescription(),
             $this->getCategory()?->getName()
         );

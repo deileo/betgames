@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity]
 #[ORM\Table(name: 'categories')]
 #[UniqueEntity('name')]
+#[ORM\Index(name: 'category_name_idx', columns: ['name'])]
 class Category
 {
     Use TimestampableEntity;
