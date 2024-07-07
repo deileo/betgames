@@ -26,6 +26,7 @@ security:
     access_control:
         - { path: '^/api/login', roles: PUBLIC_ACCESS, methods: [POST] }
         - { path: '^/api/user', roles: PUBLIC_ACCESS, methods: [POST] }
+        - { path: '^/api/doc', roles: PUBLIC_ACCESS, methods: [GET] }
         - { path: '^/', role: ROLE_USER }
 
 when@test:

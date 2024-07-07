@@ -2,7 +2,7 @@
 
 namespace App\User\Domain\Response;
 
-class UserResponse
+readonly class UserResponse
 {
     public function __construct(
         private int $id,
@@ -30,8 +30,8 @@ class UserResponse
     {
         return [
             'id' => $this->id,
-            'email' => $this->email,
-            'fullName' => $this->fullName,
+            'email' => $this->getEmail(),
+            'fullName' => $this->getFullName(),
         ];
     }
 }
