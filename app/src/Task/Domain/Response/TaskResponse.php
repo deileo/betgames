@@ -15,6 +15,8 @@ readonly class TaskResponse
         private Status $status,
         private Priority $priority,
         private string $createdBy,
+        private DateTime $createdAt,
+        private DateTime $updatedAt,
         private ?string $description = null,
         private ?string $categoryName = null
     ) {
@@ -55,17 +57,29 @@ readonly class TaskResponse
         return $this->categoryName;
     }
 
+    public function getCreatedAt(): DateTime
+    {
+        return $this->createdAt;
+    }
+
+    public function getUpdatedAt(): DateTime
+    {
+        return $this->updatedAt;
+    }
+
     public function toArray(): array
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
-            'description' => $this->description,
-            'dueDate' => $this->dueDate->format('Y-m-d'),
+            'title' => $this->getTitle(),
+            'description' => $this->getDescription(),
+            'dueDate' => $this->getDueDate()->format('Y-m-d'),
             'status' => $this->getStatus(),
             'priority' => $this->getPriority(),
             'category' => $this->getCategoryName(),
             'createdBy' => $this->getCreatedBy(),
+            'createdAt' => $this->getCreatedAt()->format('Y-m-d H:i:s'),
+            'updatedAt' => $this->getUpdatedAt()->format('Y-m-d H:i:s'),
         ];
     }
 }
