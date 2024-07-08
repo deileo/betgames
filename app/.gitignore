@@ -13,5 +13,4 @@
 /phpunit.xml
 .phpunit.cache
 .phpunit.result.cache
-/reports
 ###< phpunit/phpunit ###
